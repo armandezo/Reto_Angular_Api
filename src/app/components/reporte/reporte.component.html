@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row text-center">
+    <h1>Reportes Post Publicados Por Persona</h1>
+  </div>
+  <div class="row" *ngIf="barChartData.length > 0">
+    <div class="col-md-6">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+    <div class="col-md-6">
+      <canvas
+        baseChart
+        [data]="doughnutChartData"
+        [labels]="barChartLabels"
+        [chartType]="doughnutChartType"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

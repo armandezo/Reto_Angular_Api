@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+$color_white: #f2f2f2;
+
+$color_black: rgb(8, 8, 8);
+
+$color_gray: rgba(121, 121, 121, 0.8);
+$Color_pink: #ff679b;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    background-color: $color_white;
+}
+
+a:hover {
+    color: $color_white;
+}
+
+.loading-container {
+    width: 100wh;
+    height: 80vh;
+}
+.card-heigth {
+    height: 22em;
+    margin-top: 3em;
+}
+
+// CARD JOBS AND USER
+
+// Card
+.card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: $color_white;
+}
+
+.social-links li a {
+    border-radius: 50%;
+    color: $color_gray;
+    display: inline-block;
+    height: 30px;
+    line-height: 27px;
+    border: 2px solid $color_gray;
+    text-align: center;
+    width: 30px;
+}
+
+.social-links li a:hover {
+    color: $color_gray;
+    border: 2px solid $color_gray;
+}
+.thumb-lg {
+    height: 88px;
+    width: 88px;
+}
+.img-thumbnail {
+    padding: 0.25rem;
+    background-color: $color_white;
+    border: 1px solid $color_white;
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+.text-pink {
+    color: $Color_pink !important;
+}
+.btn-rounded {
+    border-radius: 2em;
+}
+.text-muted {
+    color: $color_gray !important;
+}
+h4 {
+    line-height: 22px;
+    font-size: 18px;
+}

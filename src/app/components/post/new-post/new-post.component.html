@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image"></div>
+
+
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <h3 class="display-4">Crear Post</h3>
+                            <form [formGroup]="postForm" (ngSubmit)="crearPost(postForm)">
+                                <div class="form-group mb-3">
+                                    <input type="text" formControlName="title" placeholder="titulo" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <div *ngIf="postForm.get('title').touched && postForm.get('title').invalid">
+                                        <p class="text-danger">Este campo es obligatorio.</p>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="text" formControlName="body" placeholder="Escribir su contenido" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                    <div *ngIf="postForm.get('body').touched && postForm.get('body').invalid">
+                                        <p class="text-danger">Este campo es obligatorio.</p>
+                                    </div>
+                                </div>
+                                <button  type="submit" [disabled]="postForm.invalid" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Crear</button>
+                            
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+
+            </div>
+        </div><!-- End -->
+
+    </div>
+</div>
+
+<!-- <div class="container mt-5 p-md-4 text-center">
+    <div class="">
+        <form [formGroup]="postForm" (ngSubmit)="crearPost(postForm)" class="card p-3 p-md-5 mx-auto">
+            <h1>CREAR UN POST</h1>
+            <div class="form-group m-2">
+                <input type="text" formControlName="title" placeholder="titulo" class="form-control">
+                <div *ngIf="postForm.get('title').touched && postForm.get('title').invalid">
+                    <p class="text-danger">Este campo es obligatorio.</p>
+                </div>
+            </div>
+            <div class="form-group m-2">
+                <input type="text" formControlName="body" placeholder="Escribir su contenido" class="form-control">
+                <div *ngIf="postForm.get('body').touched && postForm.get('body').invalid">
+                    <p class="text-danger">Este campo es obligatorio.</p>
+                </div>
+            </div>
+            <div class="form-group m-2">
+                <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary px-4">Crear post</button>
+            </div>
+        </form>
+    </div>
+</div> -->

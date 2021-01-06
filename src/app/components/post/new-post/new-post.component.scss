@@ -1,0 +1,23 @@
+form {
+    max-width: 400px;
+}
+
+form input.ng-touched.ng-invalid {
+    border-color: #dc3545;
+}
+
+form input.ng-touched.ng-valid {
+    border-color: #28a745;
+}
+
+// Formulario
+.login,
+.image {
+    min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url("https://res.cloudinary.com/mhmd/image/upload/v1555917661/art-colorful-contemporary-2047905_dxtao7.jpg");
+    background-size: cover;
+    background-position: center center;
+}

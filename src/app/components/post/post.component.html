@@ -1,0 +1,86 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>LISTA DE POST</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="postFilter && postFilter.length > 0">
+    <div
+      class="col-md-6 col-lg-4 col-xs-12"
+      *ngFor="
+        let post of postFilter.slice(startSlice, startSlice + pageSize)
+          | paginate
+            : {
+                id: 'paginator',
+                itemsPerPage: pageSize,
+                currentPage: page,
+                totalItems: count
+              }
+      "
+    >
+      <div class="grid">
+        <div class="grid__item">
+          <div class="card">
+            <img
+              class="card__img"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+              alt="Snowy Mountains"
+            />
+            <div class="card__content">
+              <h1 class="card__header">{{ post.title }}</h1>
+              <p class="card__text text-justify">
+                {{ post.body }}
+              </p>
+              <button class="card__btn">
+                <a
+                  mat-raised-button
+                  class="text-success bg-button"
+                  [routerLink]="['/post/comments', post.id]"
+                >
+                  <mat-icon>home</mat-icon> VER COMENTARIOS</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <mat-card class="example-card card-heigth">
+          <mat-card-header class="text-center">
+            <mat-card-title class="text-warning">{{
+              post.title
+            }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="text-dark text-justify">
+              {{ post.body }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <a
+              mat-raised-button
+              class="text-success bg-button"
+              [routerLink]="['/post/comments', post.id]"
+            >
+              <mat-icon>home</mat-icon> VER COMENTARIOS</a
+            >
+          </mat-card-actions>
+        </mat-card> -->
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end w-75 mt-4">
+      <pagination-controls
+        id="paginator"
+        maxSize="10"
+        responsive="true"
+        previousLabel="Atras"
+        nextLabel="Proximo"
+        (pageChange)="handlePageChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+  <ng-template [ngIf]="loading">
+    <app-loading></app-loading>
+  </ng-template>
+</div>
